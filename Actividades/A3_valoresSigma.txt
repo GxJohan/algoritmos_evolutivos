@@ -1,0 +1,38 @@
+==========================================================
+	Actividad 3: Nuevo Operador Genético
+==========================================================
+1. En representacion_real.py, implementa un operador de mutación diferente:
+	def mutacion_gaussiana(cromosoma, sigma=0.1):
+    		# Tu implementación aquí
+    		# Debe mantener la normalización (suma = 1)
+2. Prueba con diferentes valores de sigma
+-----------------------------------------------------------
+		σ = 0.1 (mutación suave)
+-----------------------------------------------------------
+- Fitness inicial: -1.0911
+- Fitness final: -1.0911
+- Distribución final:
+  - Examen A: Varianza = 9.01
+  - Examen B: Varianza = 10.39
+  - Examen C: Varianza = 12.25
+- Desviación estándar entre promedios: 0.0363
+
+Resultado: Estable y balanceado, pero sin mejora visible en generaciones.
+
+-----------------------------------------------------------
+		σ = 0.3 (mutación más agresiva)
+-----------------------------------------------------------
+- Fitness inicial: -1.0911
+- Fitness final: -1.0911
+- Distribución final:
+  - Examen A: Varianza = 15.62
+  - Examen B: Varianza = 8.39
+  - Examen C: Varianza = 7.63
+- Desviación estándar entre promedios: 0.0363
+
+Resultado: Mayor dispersión en las varianzas, pero sin pérdida del equilibrio.
+
+----------------------------------------------------
+		Respuesta
+----------------------------------------------------
+Aumentar el sigma produce mayor diversidad en las soluciones, pero si es muy alto puede generar soluciones menos consistentes

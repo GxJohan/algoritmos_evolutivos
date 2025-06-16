@@ -1,0 +1,55 @@
+========================================================
+	Actividad 1: Análisis Comparativo
+========================================================
+Ejecuta los tres programas y compara los resultados:
+  - ¿Cuál representación logra mejor equilibrio entre los grupos?
+  - ¿Cuál converge más rápido? (observa las generaciones)
+  - Documenta tus observaciones en un archivo analisis.txt
+--------------------------------------------------------
+		Representación Binaria
+--------------------------------------------------------
+- Mejor fitness alcanzado: -0.0363
+- Generación donde se estabiliza: 20
+- Promedios por grupo:
+  * A = 15.46
+  * B = 15.38
+  * C = 15.38
+- Desviación estándar entre promedios: 0.0363
+
+--------------------------------------------------------
+		Representación Permutacional
+--------------------------------------------------------
+- Mejor fitness alcanzado: 0.2637
+- Generación donde se estabiliza: 10
+- Promedios por grupo:
+  * A = 15.38
+  * B = 15.46
+  * C = 15.38
+- Desviación estándar entre promedios: 0.0363
+
+--------------------------------------------------------
+		Representación Real
+--------------------------------------------------------
+- Mejor fitness alcanzado: -1.0911
+- Generación final analizada: 120 (poca mejora)
+- Promedios por grupo:
+  * A = 15.38
+  * B = 15.46
+  * C = 15.38
+- Varianza por grupo:
+  * A = 7.16
+  * B = 12.40
+  * C = 12.08
+- Desviación estándar entre promedios: 0.0363
+
+--------------------------------------------------------
+		Respuestas
+--------------------------------------------------------
+1. ¿Cuál representación logra mejor equilibrio entre los grupos?
+   - En términos de promedios: todas (binaria, real y permutacional) lograron desviación ≈ 0.0363.
+   - En términos de homogeneidad interna: binaria y permutacional tuvieron mejor equilibrio (menor varianza).
+
+2. ¿Cuál converge más rápido?
+   - La representación permutacional fue la más rápida: mejoró el fitness significativamente en apenas 10 generaciones.
+   - La binaria mejoró hasta la generación 20 y luego se estancó.
+   - La real no mostró mejoras notables, incluso hasta la generación 120.

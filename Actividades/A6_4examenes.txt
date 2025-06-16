@@ -1,0 +1,26 @@
+================================================================
+		Actividad 6: Problema Extendido
+================================================================
+  1. Modifica uno de los programas para distribuir los alumnos en 4 exámenes
+  2. ¿Qué cambios necesitas hacer en el cromosoma?
+  3. ¿Cómo afecta esto a la convergencia del algoritmo?
+-----------------------------------------------------------------
+		2. Cambios en el cromosoma
+-----------------------------------------------------------------
+* Originalmente:
+   - Cada alumno se representaba con 3 bits (uno activo), para indicar si va al examen A, B o C
+   - Total: 39 alumnos × 3 bits = 117 bits
+* Ahora con 4 exámenes:
+   - Cada alumno necesita 4 bits (uno activo) para indicar si va al examen A, B, C o D
+   - Total: 39 × 4 = 156 bits
+*Además se debe:
+   - Cambiar la función que crea el cromosoma para que genere 4 bits por alumno
+   - Modificar la decodificación para entender esos 4 bits
+   - Ajustar la función de fitness para que admita grupos de 9 o 10 alumnos, porque 39 ÷ 4 no da exacto
+-----------------------------------------------------------------
+	3. Como afecta  ala convergencia del algoritmo
+-----------------------------------------------------------------
+  - Al haber más combinaciones posibles, el espacio de búsqueda se vuelve más amplio
+  - Es más difícil lograr una distribución equitativa porque 39 alumnos no se dividen exactamente entre 4
+  - El algoritmo puede tardar más en converger hacia una solución óptima
+  - Es necesario ajustar los parámetros del algoritmo para mantener la validez y calidad de las soluciones

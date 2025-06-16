@@ -1,0 +1,53 @@
+=======================================
+Actividad 2: Modificación de Fitness
+=======================================
+  1. En representacion_binaria.py, modifica la función calcular_fitness para:
+  	- Penalizar grupos con varianza alta de notas
+  	- Premiar diversidad (mezclar alumnos de diferentes rendimientos)
+  2. Compara los resultados con la versión original
+
+----------------------------------------------------------------
+	VERSIÓN ORIGINAL (fitness simple)
+----------------------------------------------------------------
+Generación 0: fitness = -0.2206  
+Generación 20: fitness = -0.0363
+.
+.
+.
+.
+Generación 80: fitness = -0.0363  
+
+Distribución final:
+- Examen A: 13 alumnos, promedio = 15.46
+- Examen B: 13 alumnos, promedio = 15.38
+- Examen C: 13 alumnos, promedio = 15.38
+
+Desviación estándar entre promedios: 0.0363
+
+*Observaciones:
+- Los tres grupos tienen distribucion equilibrada
+- Cumple la restriccion con tener 13 alumnos cada grupo
+- El algoritmo converge rápidamente desde la generación 20
+- Sin embargo, no se controla la diversidad interna ni la varianza de notas
+
+----------------------------------------------------------------
+	VERSIÓN MODIFICADA (con varianza y diversidad)
+----------------------------------------------------------------
+Generación 0 a 80: fitness = -1000.0000
+
+Distribución final:
+- Examen A: 12 alumnos, promedio = 14.17
+- Examen B: 18 alumnos, promedio = 16.00
+- Examen C: 9 alumnos, promedio = 15.89
+
+Desviación estándar entre promedios: 0.8393
+
+* Observaciones:
+- No cumple la restriccion con tener 13 alumnos cada grupo
+- El fitness es penalizado con -1000 por violar las restricciones
+- El algoritmo no puede generar soluciones válidas bajo la nueva lógica
+
+----------------------------------------------------------------
+			RESPUESTA
+----------------------------------------------------------------
+- La versión original cumple mejor el objetivo del problema: equilibrio y validez

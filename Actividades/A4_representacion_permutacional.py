@@ -21,24 +21,39 @@ def decodificar_cromosoma(cromosoma):
 
 def calcular_fitness(cromosoma):
     asignaciones = decodificar_cromosoma(cromosoma)
-    
+
     promedios = {}
+    penalizacion = 0
+
+   #Restriccion: alumnos con notas < 11 no pueden estar todos en el mismo examen
+    indices_bajo_rendimiento = [i for i, nota in enumerate(notas) if nota < 11]
+    ex_bajo_rend = {'A': 0, 'B': 0, 'C': 0}
+    for examen in ['A', 'B', 'C']:
+        for i in asignaciones[examen]:
+            if i in indices_bajo_rendimiento:
+                ex_bajo_rend[examen] += 1
+
+
+    if 13 in ex_bajo_rend.values():
+        penalizacion = -1.0  
+
     for examen in ['A', 'B', 'C']:
         indices = asignaciones[examen]
         notas_examen = [notas[i] for i in indices]
         promedios[examen] = np.mean(notas_examen)
-    
+
     desv_promedios = np.std(list(promedios.values()))
-    
+
     bonus_diversidad = 0
     for examen in ['A', 'B', 'C']:
         indices = asignaciones[examen]
         notas_examen = [notas[i] for i in indices]
         if max(notas_examen) - min(notas_examen) > 5:
             bonus_diversidad += 0.1
-    
-    fitness = -desv_promedios + bonus_diversidad
+
+    fitness = -desv_promedios + bonus_diversidad + penalizacion
     return fitness
+
 
 def cruce_pmx(padre1, padre2):
     size = len(padre1)
@@ -156,3 +171,6 @@ print("\nEvolución del algoritmo:")
 print(f"Fitness inicial: {historial[0]:.4f}")
 print(f"Fitness final: {historial[-1]:.4f}")
 print(f"Mejora total: {((historial[-1] - historial[0]) / abs(historial[0]) * 100):.1f}%")
+
+
+#

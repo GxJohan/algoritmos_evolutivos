@@ -1,0 +1,30 @@
+========================================================
+	Actividad 4: Restricciones Adicionales
+========================================================
+1. Modifica representacion_permutacional.py para agregar una restricción:
+   - Los alumnos con notas < 11 no pueden estar todos en el mismo examen
+2. Ajusta la función de fitness para penalizar soluciones que violen esta restricción
+
+
+----------------------------------------------------------------
+	Resultados originales (sin restricción):
+----------------------------------------------------------------
+- Fitness inicial: 0.0385
+- Fitness final: 0.2637
+- Mejora total: 584.8%
+- Promedios: A=15.38, B=15.46, C=15.38
+- Desviación estándar entre promedios: 0.0363
+
+----------------------------------------------------------------
+	Resultados con la restricción agregada:
+----------------------------------------------------------------
+- Fitness inicial: 0.1693
+- Fitness final: 0.2637
+- Mejora total: 55.8%
+- Promedios: A=15.46, B=15.38, C=15.38
+- Desviación estándar entre promedios: 0.0363
+
+----------------------------------------------------------------
+			Respuesta
+----------------------------------------------------------------
+Con la restricción aplicada, el algoritmo partió desde una solución inicial mucho más favorable (fitness más alto) y evitó soluciones con agrupamiento excesivo de alumnos con bajo rendimiento
